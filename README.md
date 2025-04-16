@@ -1,47 +1,50 @@
-# README.md Content
+Project-Budget_Tracker
+This project is a full-stack mini project developed as part of our Application Programming course. Currently, we have one week to complete and submit it. However, after the submission, we plan to expand it into a larger and more feature-rich application.
 
-# Project Budget Tracker
+💰 Budget Tracker
 
-## Overview
-The Budget Tracker is a web application designed to help users manage their finances by tracking income and expenses. It provides a user-friendly interface for managing transactions, generating reports, and visualizing financial data.
+A simple and intuitive Budget Tracker web application that helps users manage their expenses, categorize their income and spending, and get insights into their financial habits.
 
-## Features
-- User registration and authentication
-- Transaction management (create, update, delete)
-- Graphical representation of financial data
-- Responsive design for mobile and desktop
+📖 About the Project
 
-## Technologies Used
-- PHP for backend development
-- MySQL for database management
-- JavaScript for client-side interactivity
-- CSS for styling
-- Python for data visualization
+Budget Tracker is a personal finance management app that enables users to:
 
-## Installation
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd Project-Budget_Tracker
-   ```
-3. Install dependencies using Composer:
-   ```
-   composer install
-   ```
-4. Set up the database using the provided SQL script:
-   ```
-   mysql -u <username> -p < database/budget_tracker.sql
-   ```
+Add income and expenses.
 
-## Usage
-- Start the server and navigate to `public/index.php` to access the application.
-- Follow the on-screen instructions to register and start managing your budget.
+Categorize transactions.
 
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.
+Visualize their financial data through graphs.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Keep track of their current balance in real-time.
+
+This project is ideal for beginners looking to build full-stack web applications and understand CRUD operations, form handling, data visualization, and more.
+
+✨ Features
+
+✅ Add and delete income/expense entries
+
+🏷️ Categorize your transactions (e.g., Food, Rent, Salary)
+
+📊 Real-time charts and stats for insights
+
+📅 Date-wise tracking of entries
+
+💾 Data persistence (using database)
+
+🎨 Responsive and clean UI
+
+🛠️ Tech Stack
+
+Frontend:
+
+HTML, CSS, JavaScript
+
+python (for graphs)
+
+Backend:
+
+PHP
+
+Database:
+
+MySQL
