@@ -9,10 +9,21 @@
         crossorigin="anonymous" />
     <!-- Update CSS path -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
-    <title>Rotating Navigation</title>
+    <title> BUDGET TRACKER </title>
 </head>
 
 <body>
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="../assets/images/logo.png" alt="Logo" class="logo" />
+            <span class="project-name" style="color=blue">Budget Tracker</span>
+        </div>
+        <div class="navbar-right">
+            <a href="https://github.com/madanVedansh21/Project-Budget_Tracker" class="github-link">GitHub</a>
+        </div>
+    </header>
+
     <div class="container">
         <div class="circle-container">
             <div class="circle">
