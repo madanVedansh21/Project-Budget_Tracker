@@ -1,4 +1,4 @@
-#Project-Budget_Tracker
+Project-Budget_Tracker
 This project is a full-stack mini project developed as part of our Application Programming course. Currently, we have one week to complete and submit it. However, after the submission, we plan to expand it into a larger and more feature-rich application.
 
 💰 Budget Tracker
