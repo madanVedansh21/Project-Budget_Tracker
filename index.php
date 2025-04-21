@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -116,20 +119,60 @@
     <!-- Sign Up Section -->
     <section class="signup" id="signup">
         <div class="container">
-            <h2 class="section-title">Ready to Take Control?</h2>
-            <p class="section-description">Start your journey to financial freedom today</p>
+            <div class="auth-container">
+                <!-- Signup Form -->
+                <div class="auth-form-container">
+                    <h2 class="section-title">Create Account</h2>
+                    <p class="section-description">Start your journey to financial freedom today</p>
 
-            <form class="signup-form fade-in">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Create Free Account</button>
-            </form>
+                    <?php
+                    if (isset($_SESSION['signup_error'])) {
+                        echo '<div class="alert alert-error">' . $_SESSION['signup_error'] . '</div>';
+                        unset($_SESSION['signup_error']);
+                    }
+                    if (isset($_SESSION['signup_success'])) {
+                        echo '<div class="alert alert-success">' . $_SESSION['signup_success'] . '</div>';
+                        unset($_SESSION['signup_success']);
+                    }
+                    ?>
 
-            <p class="privacy-note fade-in delay-1">We respect your privacy and will never share your information.</p>
+                    <form class="signup-form fade-in" action="signup.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="username" name="username" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" placeholder="Create Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form-container" id="login">
+                    <h2 class="section-title">Login</h2>
+                    <p class="section-description">Welcome back!</p>
+
+                    <?php
+                    if (isset($_SESSION['login_error'])) {
+                        echo '<div class="alert alert-error">' . $_SESSION['login_error'] . '</div>';
+                        unset($_SESSION['login_error']);
+                    }
+                    ?>
+
+                    <form class="login-form fade-in" action="login.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="login-username" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="login-password" name="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
