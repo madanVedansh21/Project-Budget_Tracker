@@ -1,0 +1,468 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    /* Colors - Dark Theme */
+    --primary-color: #3E80FC;
+    --primary-light: #5D95FD;
+    --primary-dark: #2B6DF5;
+
+    --accent-color: #4CAF50;
+    --accent-light: #66BB6A;
+    --accent-dark: #388E3C;
+
+    --warning-color: #FFC107;
+    --error-color: #F44336;
+
+    --bg-primary: #0A0F1C;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1F2937;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --text-tertiary: #64748B;
+
+    --border-color: #1E293B;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+    /* Typography */
+    --font-family: 'Poppins', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px var(--shadow-color);
+    --shadow-md: 0 4px 8px var(--shadow-color);
+    --shadow-lg: 0 8px 16px var(--shadow-color);
+    --shadow-xl: 0 12px 24px var(--shadow-color);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+
+    /* Z-index */
+    --z-negative: -1;
+    --z-normal: 1;
+    --z-fixed: 100;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(circle at top, #1a365d 0%, var(--bg-primary) 50%);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+    padding: 1.25rem 0;
+    background: linear-gradient(to right, rgba(10, 15, 28, 0.95), rgba(31, 41, 55, 0.95));
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header.scrolled {
+    padding: 1rem 0;
+    background: linear-gradient(to right, rgba(10, 15, 28, 0.98), rgba(31, 41, 55, 0.98));
+    box-shadow: var(--shadow-md);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+.logo span {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    color: transparent;
+    background-clip: text;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-fast);
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 8rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--text-primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Features Section */
+.features {
+    background-color: var(--bg-secondary);
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-description {
+    font-size: var(--font-size-lg);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: var(--text-secondary);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+}
+
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Sign Up Section */
+.signup {
+    background-color: var(--bg-secondary);
+    padding: 5rem 0;
+}
+
+.signup-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
+
+/* Quick Links Section */
+.quick-links {
+    padding: 2.5rem;
+    background: linear-gradient(145deg, var(--bg-tertiary), var(--bg-secondary));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(250, 247, 247, 0.05);
+}
+
+.quick-links h2 {
+    color: var(--text-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+    
+    -webkit-text-fill-color: transparent;
+}
+
+.quick-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Quick Links Section - Updated Link Styles */
+.quick-links-list a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-decoration: none;  /* This removes the underline */
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    background: linear-gradient(to right, var(--bg-tertiary), var(--bg-secondary));
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-links-list a:hover {
+    transform: translateX(10px);
+    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+}
+
+/* Add this if you want animation when links appear */
+.quick-links-list a {
+    animation: fadeIn 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-20px, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Add animation delay for each link */
+.quick-links-list a:nth-child(1) { animation-delay: 0.1s; }
+.quick-links-list a:nth-child(2) { animation-delay: 0.2s; }
+.quick-links-list a:nth-child(3) { animation-delay: 0.3s; }
+.quick-links-list a:nth-child(4) { animation-delay: 0.4s; }
+
+/* Footer */
+.footer {
+    background-color: var(--bg-tertiary);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    box-shadow: 0 4px 12px rgba(62, 128, 252, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(62, 128, 252, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .about .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all var(--transition-normal);
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
